@@ -17,10 +17,9 @@
 import calculate
 import sys
 
-def cal_idx():
-    global idx
-    idx = False
-def set_num1():
+
+idx = False
+def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
     global num_1
     num_1 = input("첫번째 숫자 : ")
     if num_1.isnumeric() == True:
@@ -28,8 +27,8 @@ def set_num1():
     else:
         print("잘못 입력했습니다.")
         print("exit")
-        sys.exit()
-def set_num2():
+        sys.exit()  #
+def set_num2():     #num2 의 값을 받고 숫자가 아니면 종료
     global num_2
     num_2 = input("두번째 숫자 : ")
     if num_2.isnumeric() == True:
@@ -38,9 +37,9 @@ def set_num2():
         print("잘못 입력했습니다.")
         print("exit")
         sys.exit()
-def prt_cal():
+def prt_cal():      #옵션 번호 출력
     print("(1)더하기 (2)빼기 (3)곱하기 (4)나누기 (5)Clear (6)exit")
-def set_cal():
+def set_cal():      #옵션 선택 호출
     global cal
     cal = input("연산 : ")
 
@@ -106,7 +105,6 @@ while True:
         elif cal == '5':
             print("Clear")
             idx = False
-            #num_1 = int(input("첫번째 숫자 : "))
             num_2 = 0
             continue
         elif cal == '6':
