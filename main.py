@@ -27,7 +27,7 @@ def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
     else:
         print("잘못 입력했습니다.")
         print("exit")
-        sys.exit()  #
+        sys.exit()  #프로그램 종료 함수
 def set_num2():     #num2 의 값을 받고 숫자가 아니면 종료
     global num_2
     num_2 = input("두번째 숫자 : ")
@@ -45,63 +45,49 @@ def set_cal():      #옵션 선택 호출
 
 
 while True:
-    if idx == False:        # 첫 실행
+    if idx == False:        # 첫 실행시 bool idx == False << num1의 값을 입력받음
         set_num1()
         prt_cal()
         set_cal()
 
         if cal == '1':
             set_num2()
-            print(num_1, "+", num_2, "=", calculate.sum(num_1, num_2))
-            num_1 = calculate.sum(num_1, num_2)
+            num_1 = calculate.cal_sum(num_1, num_2)
             idx = True
-            #continue
         elif cal == '2':
             set_num2()
-            print(num_1, "-", num_2, "=", calculate.sub(num_1, num_2))
-            num_1 = calculate.sub(num_1, num_2)
+            num_1 = calculate.cal_sub(num_1, num_2)
             idx = True
-            #continue
         elif cal == '3':
             set_num2()
-            print(num_1, "*", num_2, "=", calculate.mul(num_1, num_2))
-            num_1 = calculate.mul(num_1, num_2)
+            num_1 = calculate.cal_mul(num_1, num_2)
             idx = True
-            #continue
         elif cal == '4':
             set_num2()
-            print(num_1, "/", num_2, "=", calculate.div(num_1, num_2))
-            num_1 = calculate.div(num_1, num_2)
+            num_1 = calculate.cal_div(num_1, num_2)
             idx = True
-            #continue
         elif cal == '5':
-            idx = False
-            num_1 = 0
-            num_2 = 0
-            continue
+            print("Clear")
+            continue        #반복문 재실행
         elif cal == '6':
             break
 
-    else:
+    else:   #bool idx == True >> num_1 에 값이 입력된 상태
         print("첫번째 숫자 : ", num_1)
         prt_cal()
         cal = input("연산 : ")
         if cal == '1':
             set_num2()
-            print(num_1, "+", num_2, "=", calculate.sum(num_1, num_2))
-            num_1 = calculate.sum(num_1, num_2)
+            num_1 = calculate.cal_sum(num_1, num_2)
         elif cal == '2':
             set_num2()
-            print(num_1, "-", num_2, "=", calculate.sub(num_1, num_2))
-            num_1 = calculate.sub(num_1, num_2)
+            num_1 = calculate.cal_sub(num_1, num_2)
         elif cal == '3':
             set_num2()
-            print(num_1, "*", num_2, "=", calculate.mul(num_1, num_2))
-            num_1 = calculate.mul(num_1, num_2)
+            num_1 = calculate.cal_mul(num_1, num_2)
         elif cal == '4':
             set_num2()
-            print(num_1, "/", num_2, "=", calculate.div(num_1, num_2))
-            num_1 = calculate.div(num_1, num_2)
+            num_1 = calculate.cal_div(num_1, num_2)
         elif cal == '5':
             print("Clear")
             idx = False
