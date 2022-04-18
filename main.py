@@ -17,9 +17,9 @@
 import calculate
 import sys
 
-global num_1
-global num_2
-global cal
+# global num_1
+# global num_2
+# global cal
 
 idx = False
 def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
@@ -75,6 +75,9 @@ while True:
             continue        #반복문 재실행
         elif cal == '6':
             break
+        else :
+            print("잘못 입력했습니다.")
+
 
     else:   #bool idx == True >> num_1 에 값이 입력된 상태
         print("첫번째 숫자 : ", num_1)
@@ -100,3 +103,5 @@ while True:
         elif cal == '6':
             print("exit")
             break
+        else :
+            print("잘못 입력했습니다.")
