@@ -17,10 +17,11 @@
 import calculate
 import sys
 
+global num_1
+global num_2
 
 idx = False
 def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
-    global num_1
     num_1 = input("첫번째 숫자 : ")
     if num_1.isnumeric() == True:
         num_1 = int(num_1)
@@ -29,7 +30,6 @@ def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
         print("exit")
         sys.exit()  #프로그램 종료 함수
 def set_num2():     #num2 의 값을 받고 숫자가 아니면 종료
-    global num_2
     num_2 = input("두번째 숫자 : ")
     if num_2.isnumeric() == True:
         num_2 = int(num_2)
@@ -52,7 +52,7 @@ while True:
 
         if cal == '1':
             set_num2()
-            num_1 = calculate.cal_sum(num_1, num_2)
+            num_1 = calculate.cal_add(num_1, num_2)
             idx = True
         elif cal == '2':
             set_num2()
@@ -78,7 +78,7 @@ while True:
         cal = input("연산 : ")
         if cal == '1':
             set_num2()
-            num_1 = calculate.cal_sum(num_1, num_2)
+            num_1 = calculate.cal_add(num_1, num_2)
         elif cal == '2':
             set_num2()
             num_1 = calculate.cal_sub(num_1, num_2)

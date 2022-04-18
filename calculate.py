@@ -1,4 +1,4 @@
-def sum(x, y):
+def add(x, y):
     return x + y
 
 def sub(x, y):
@@ -10,9 +10,10 @@ def mul(x, y):
 def div(x, y):
     return x / y
 
-def cal_sum(cal_num_1, cal_num_2):
-    print(cal_num_1, "+", cal_num_2, "=", sum(cal_num_1, cal_num_2))
-    cal_num_1 = sum(cal_num_1, cal_num_2)
+
+def cal_add(cal_num_1, cal_num_2):
+    print(cal_num_1, "+", cal_num_2, "=", add(cal_num_1, cal_num_2))
+    cal_num_1 = add(cal_num_1, cal_num_2)
     return cal_num_1
 
 def cal_sub(cal_num_1, cal_num_2):
