@@ -19,10 +19,11 @@ import sys
 
 global num_1
 global num_2
-
+global cal
 
 idx = False
 def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
+    global num_1
     num_1 = input("첫번째 숫자 : ")
     if num_1.isnumeric() == True:
         num_1 = int(num_1)
@@ -31,6 +32,7 @@ def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
         print("exit")
         sys.exit()  #프로그램 종료 함수
 def set_num2():     #num2 의 값을 받고 숫자가 아니면 종료
+    global num_2
     num_2 = input("두번째 숫자 : ")
     if num_2.isnumeric() == True:
         num_2 = int(num_2)
@@ -43,6 +45,7 @@ def prt_cal():      #옵션 번호 출력
 def set_cal():      #옵션 선택 호출
     global cal
     cal = input("연산 : ")
+    #return cal
 
 
 while True:

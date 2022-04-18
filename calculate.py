@@ -10,6 +10,12 @@ def mul(x, y):
 def div(x, y):
     return x / y
 
+# class Cal:
+#     def __add__(self, cal_num_1, cal_num_2):
+#         print(cal_num_1, "+", cal_num_2, "=", add(cal_num_1, cal_num_2))
+#         cal_num_1 = add(cal_num_1, cal_num_2)
+#         return cal_num_1
+
 
 def cal_add(cal_num_1, cal_num_2):
     print(cal_num_1, "+", cal_num_2, "=", add(cal_num_1, cal_num_2))
