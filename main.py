@@ -48,9 +48,9 @@ def set_num2():     #num2 의 값을 받고 숫자가 아니면 종료
         print("잘못 입력했습니다.")
         print("exit")
         sys.exit()
-def prt_cal():      #옵션 번호 출력
+def prt_opt():      #옵션 번호 출력
     print("(1)더하기 (2)빼기 (3)곱하기 (4)나누기 (5)Clear (6)exit")
-def set_cal():      #옵션 선택 호출
+def set_opt():      #옵션 선택 호출
     global cal
     cal = input("연산 : ")
     #return cal
@@ -60,8 +60,8 @@ def set_cal():      #옵션 선택 호출
 while True:
     if idx == False:        # 첫 실행시 bool idx == False << num1의 값을 입력받음
         set_num1()
-        prt_cal()
-        set_cal()
+        prt_opt()
+        set_opt()
 
         if cal == '1':
             set_num2()
@@ -89,8 +89,8 @@ while True:
 
 
     else:   #bool idx == True >> num_1 에 값이 입력된 상태
-        print("첫번째 숫자 : ", num_1)
-        prt_cal()
+        print("첫번째 숫자 : %g" % (num_1))
+        prt_opt()
         cal = input("연산 : ")
         if cal == '1':
             set_num2()
