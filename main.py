@@ -17,16 +17,24 @@
 import calculate
 import sys
 
-# global num_1
-# global num_2
-# global cal
+global num_1
+global num_2
+global cal
 
 idx = False
+
+def isNumber(num):
+  try:
+    float(num)
+    return True
+  except ValueError:
+    return False
+
 def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
     global num_1
     num_1 = input("첫번째 숫자 : ")
-    if num_1.isnumeric() == True:
-        num_1 = int(num_1)
+    if isNumber(num_1) == True:
+        num_1 = float(num_1)
     else:
         print("잘못 입력했습니다.")
         print("exit")
@@ -34,8 +42,8 @@ def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
 def set_num2():     #num2 의 값을 받고 숫자가 아니면 종료
     global num_2
     num_2 = input("두번째 숫자 : ")
-    if num_2.isnumeric() == True:
-        num_2 = int(num_2)
+    if isNumber(num_2) == True:
+        num_2 = float(num_2)
     else:
         print("잘못 입력했습니다.")
         print("exit")
@@ -47,6 +55,7 @@ def set_cal():      #옵션 선택 호출
     cal = input("연산 : ")
     #return cal
 
+#add = calculate.Cal.__add__(num_1, num_2)
 
 while True:
     if idx == False:        # 첫 실행시 bool idx == False << num1의 값을 입력받음
@@ -56,19 +65,19 @@ while True:
 
         if cal == '1':
             set_num2()
-            num_1 = calculate.cal_add(num_1, num_2)
+            num_1 = calculate.Cal.add(num_1, num_2)
             idx = True
         elif cal == '2':
             set_num2()
-            num_1 = calculate.cal_sub(num_1, num_2)
+            num_1 = calculate.Cal.sub(num_1, num_2)
             idx = True
         elif cal == '3':
             set_num2()
-            num_1 = calculate.cal_mul(num_1, num_2)
+            num_1 = calculate.Cal.mul(num_1, num_2)
             idx = True
         elif cal == '4':
             set_num2()
-            num_1 = calculate.cal_div(num_1, num_2)
+            num_1 = calculate.Cal.div(num_1, num_2)
             idx = True
         elif cal == '5':
             print("Clear")
@@ -85,16 +94,16 @@ while True:
         cal = input("연산 : ")
         if cal == '1':
             set_num2()
-            num_1 = calculate.cal_add(num_1, num_2)
+            num_1 = calculate.Cal.add(num_1, num_2)
         elif cal == '2':
             set_num2()
-            num_1 = calculate.cal_sub(num_1, num_2)
+            num_1 = calculate.Cal.sub(num_1, num_2)
         elif cal == '3':
             set_num2()
-            num_1 = calculate.cal_mul(num_1, num_2)
+            num_1 = calculate.Cal.mul(num_1, num_2)
         elif cal == '4':
             set_num2()
-            num_1 = calculate.cal_div(num_1, num_2)
+            num_1 = calculate.Cal.div(num_1, num_2)
         elif cal == '5':
             print("Clear")
             idx = False
