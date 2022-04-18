@@ -1,3 +1,12 @@
+import sys
+
+def isNumber(num):
+  try:
+    float(num)
+    return True
+  except ValueError:
+    return False
+
 class Default_Cal:
     def add(x, y):
         return x + y
@@ -12,6 +21,31 @@ class Default_Cal:
         return x / y
 
 class Cal:
+    def set_num_1(self):
+        self.set_num_1 = input("첫번째 숫자 : ")
+        if isNumber(self.set_num_1) == True:
+            num_1 = float(self.set_num_1)
+            return num_1
+        else:
+            print("잘못 입력했습니다.")
+            print("exit")
+            sys.exit()  # 프로그램 종료 함수
+
+    def set_num_2(self):
+        self.set_num_2 = input("두번째 숫자 : ")
+        if isNumber(self.set_num_2) == True:
+            num_2 = float(self.set_num_2)
+            return num_2
+        else:
+            print("잘못 입력했습니다.")
+            print("exit")
+            sys.exit()
+
+    def set_opt(self):
+        self.set_opt = input("연산 : ")
+        opt = self.set_opt
+        return opt
+
     def add(cal_num_1, cal_num_2):
         print("%g + %g = %g" % (cal_num_1, cal_num_2, Default_Cal.add(cal_num_1, cal_num_2)))
         cal_num_1 = Default_Cal.add(cal_num_1, cal_num_2)
