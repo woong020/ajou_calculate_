@@ -20,6 +20,7 @@ import sys
 global num_1
 global num_2
 
+
 idx = False
 def set_num1():     #num1 의 값을 받고 숫자가 아니면 종료
     num_1 = input("첫번째 숫자 : ")
